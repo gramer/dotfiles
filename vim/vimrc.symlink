@@ -1,4 +1,239 @@
-syntax on
+" vim: set foldmethod=marker foldlevel=0:
+" spriteye's personal .vimrc file.
+"
+" plug {{{
+silent! if plug#begin('~/.vim/plugged')
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" edit 
+Plug 'NLKNguyen/copy-cut-paste.vim'
+
+" appearance
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" browsering
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" lang
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'NLKNguyen/copy-cut-paste.vim'
+Plug 'klen/python-mode'
+Plug 'shougo/neocomplcache.vim'
+
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv'
+
+" tools 
+Plug 'mhinz/vim-grepper'
+Plug 'wakatime/vim-wakatime'
+
+call plug#end()
+endif
+" }}}
+
+" general {{{
+filetype plugin indent on
+syntax on
+colorscheme dracula
+set encoding=utf-8
+set term=xterm-256color
+set termencoding=utf-8
+scriptencoding utf-8
+set smartcase
+set smarttab
+let mapleader = ","
+set cursorline
+set viewoptions=folds,options,cursor,unix,slash
+set pastetoggle=<F12>
+set number
+set wildmenu
+set wildmode=list:longest,full
+set mouse=a
+set switchbuf=usetab
+set foldmethod=marker
+" }}}
+
+" formatting {{{
+set nowrap
+set autoindent
+set smartindent
+
+set foldmethod=marker
+set foldlevelstart=99
+
+let javaScript_fold=1         " JavaScript
+let perl_fold=1               " Perl
+let php_folding=1             " PHP
+let r_syntax_folding=1        " R
+let ruby_fold=1               " Ruby
+let sh_fold_enabled=1         " sh
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
+" }}}
+
+" airline {{{
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#eclim#enabled = 1
+" }}}
+
+" fzf {{{
+nnoremap <silent> <expr> <leader><leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <leader><Enter>  :Buffers<cr>
+" }}}
+
+" nerdtree {{{
+nnoremap <leader>m :NERDTreeToggle<cr>
+nnoremap + <c-w>+
+nnoremap - <c-w>-
+nnoremap > <c-w>>
+nnoremap < <c-w><
+let NERDTreeIgnore=['\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore+=['\.pyc', '\.egg-info', '__pycache__']
+let NERDTreeShowHidden=0
+let g:NERDTreeWinSize=50
+" }}}
+
+" move window {{{
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h 
+noremap  <c-n> :new<cr> 
+" }}}
+
+" move buffer {{{
+nnoremap <c-s-tab> :bprevious<cr>
+nnoremap <c-tab> :bnext<cr>
+"}}}
+
+" rainbow parentheses {{{
+let g:rainbow#pairs = [['(', ')'], ['{', '}']]
+call rainbow_parentheses#activate()
+" }}}
+
+" quickly open/reload vimrc {{{
+nnoremap <leader>ev :split $MYVIMRC<cr>  
+nnoremap <leader>sv :source $MYVIMRC<cr> 
+" }}}
+
+" tagbar {{{
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+nnoremap <leader>t :TagbarToggle<cr>
+" }}}
+
+" gitv {{{
+let g:Gitv_DoNotMapCtrlKey = 1
+nnoremap <silent> <leader>gv :Gitv<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gc :Gcommit -v<CR>
+highlight diffRemoved ctermfg=red
+" }}}
+
+" pymode {{{
+let g:pymode_lint_checkers = ['pep8']
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+"/ }}}
+
+"  neocomplcache {{{
+" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Enable heavy features.
+" Use camel case completion.
+"let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+"let g:neocomplcache_enable_underbar_completion = 1
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+
+" For cursor moving in insert mode(Not recommended)
+"inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
+"inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
+"inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplcache_enable_cursor_hold_i = 1
+" Or set this.
+"let g:neocomplcache_enable_insert_char_pre = 1
+
+" AutoComplPop like behavior.
+"let g:neocomplcache_enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+"/ }}}
