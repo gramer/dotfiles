@@ -670,9 +670,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 376 620 392 0 0 1440 877 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>340 340 918 512 0 0 1440 877 </string>
+	<string>323 1462 918 512 -270 900 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>524 161 650 427 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -1417,14 +1417,6 @@
 			<real>0.0</real>
 			<key>Triggers</key>
 			<array>
-				<dict>
-					<key>action</key>
-					<string>HighlightTrigger</string>
-					<key>parameter</key>
-					<integer>0</integer>
-					<key>regex</key>
-					<string>Exception</string>
-				</dict>
 				<dict>
 					<key>action</key>
 					<string>HighlightTrigger</string>
@@ -2347,7 +2339,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>6093BAE3-B5D6-448E-B46C-D25BB80BD00D</string>
 	<key>NoSyncLastTipTime</key>
-	<real>528393670.41577798</real>
+	<real>529594134.44784498</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2377,6 +2369,15 @@
 		<string>0019</string>
 		<string>0020</string>
 		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
+		<string>0030</string>
 	</array>
 	<key>NoSyncTurnOffBracketedPasteOnHostChange</key>
 	<true/>
@@ -2452,7 +2453,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-30T04:11:08Z</date>
+	<date>2017-10-09T13:17:19Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2510,7 +2511,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.3.beta.1</string>
+	<string>3.1.4.beta.1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
