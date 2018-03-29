@@ -65,5 +65,5 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse"
 # }}}
 
 # autoenv {{{
-[ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh
+eval "$(direnv hook zsh)"
 # }}}
