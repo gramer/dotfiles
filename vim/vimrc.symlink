@@ -18,7 +18,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-plugin'
 
 " lang
 Plug 'ekalinin/Dockerfile.vim'
