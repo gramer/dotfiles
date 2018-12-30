@@ -17,7 +17,7 @@ alias grep='grep --color=auto'
 alias h="history"
 alias l='ls -alF'
 alias la='ls -A'
-alias lg="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias lg="git lh"
 alias ll='ls -lA'
 alias ls='ls -G'
 alias lt='ls -lt | head'
@@ -28,4 +28,14 @@ alias sz="source ~/.zshrc"
 alias t='tree'
 alias tf='tail -f $LOGS_BASE/catalina_logs/catalina.out'
 alias vi2='vi -O2 '
+
+export OH_MY_ZSH_PLUGIN_HOME='/Users/coupang/.oh-my-zsh/plugins'
+alias load-rbenv='[ -f "$OH_MY_ZSH_PLUGIN_HOME/rbenv/rbenv.plugin.zsh" ] && source "$OH_MY_ZSH_PLUGIN_HOME/rbenv/rbenv.plugin.zsh"'
+alias load-nvm='[ - /usr/local/opt/nvm/nvm.sh ] && source /usr/local/opt/nvm/nvm.sh'
+
+alias load-minikube='eval "$(minikube completion zsh)"'
+alias load-minishift='eval "$(minishift completion zsh)"'
+alias load-pipenv='eval "$(pipenv --completion)"'
+alias load-kops='eval "$(kops completion zsh)"'
+alias load-helm='eval "$(helm completion zsh)"'
 # }}}
