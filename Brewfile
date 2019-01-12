@@ -90,6 +90,7 @@ brew "libtool"
 brew "libyaml"
 brew "little-cms2"
 brew "luajit"
+brew "mas"
 brew "makedepend"
 brew "maven"
 brew "mercurial"
@@ -180,7 +181,25 @@ cask "scapple"
 cask "slack"
 cask "spectacle"
 cask "tableau"
+cask "tableplus"
 cask "the-unarchiver"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
+
+mas "Amphetamine", id: 937984704
+mas "Clocker", id: 1056643111
+mas "feedly", id: 865500966
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "KakaoTalk", id: 869223134
+mas "Keynote", id: 409183694
+mas "LastPass", id: 926036361
+mas "Memory Clean 2", id: 1114591412
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pocket", id: 568494494
+mas "RocketFuel", id: 1114196460
+mas "Teampaper Snap", id: 1199502670
+mas "Wallpapers HD Lite", id: 441812880
+mas "Wunderlist", id: 410628904

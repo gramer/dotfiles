@@ -4,7 +4,6 @@
 [hub]
     protocol = https
 [alias]
-[alias]
     alias-basic = "!#----------------------------------------------------------;\n\
         git alias | head -7"
     ci = commit
