@@ -8,8 +8,25 @@ export TERM=xterm-256color
 #POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh dir vcs newline status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(kubecontext battery) 
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0B3'
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_CUSTOM_COMMAND_TIME="zsh_command_time"
+POWERLEVEL9K_CUSTOM_COMMAND_TIME_BACKGROUND="253" # white
+POWERLEVEL9K_CUSTOM_COMMAND_TIME_FOREGROUND="000" # blackA
+
+POWERLEVEL9K_KUBECONTEXT_BACKGROUND='032'
+POWERLEVEL9K_KUBECONTEXT_FOREROUND='white'
+
+# If command execution time above min. time, plugins will not output time.
+ZSH_COMMAND_TIME_MIN_SECONDS=3
+
+# Message to display (set to "" for disable).
+ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
+
+# Message color.
+# ZSH_COMMAND_TIME_COLOR="cyan"
 # }}}
 
 # oh-my-zsh theme # {{{
