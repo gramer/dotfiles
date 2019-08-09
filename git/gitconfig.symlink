@@ -81,6 +81,9 @@
             fi; \
         done"
     b-c = "!git branch-clean"
+    branch-to-local = "!# Tracking all remote branches.;\n\
+        for i in `git branch -a | grep remote | grep -v HEAD | grep -v master`; do git branch --track ${i#remotes/origin/} $i; done"
+
     branch-list = "!# List the branches.;\n\
         git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(refname:short)|%(committerdate:relative)|%(authorname)' \
         | column -ts'|' \

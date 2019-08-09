@@ -36,13 +36,13 @@ fi
 # oh-my-zsh general config # {{{
 export ZSH=$HOME/.oh-my-zsh
 plugins=(
-alias-tips
 autojump
 autoenv
 docker
 command-time
 git
 golang
+helm
 node
 python
 kubectl
@@ -83,3 +83,5 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse"
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
