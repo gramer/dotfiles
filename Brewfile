@@ -151,6 +151,7 @@ brew "the_silver_searcher"
 brew "tig"
 brew "tomcat@8.0"
 brew "tree"
+brew "tmux"
 brew "v8"
 brew "v8@3.15"
 brew "vim", args: ["with-override-system-vi"]

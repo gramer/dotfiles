@@ -49,3 +49,17 @@ function ks() {
   fi
 }
 
+function helm-toggle() {
+    if [ -z "$1" ]; then
+        echo "helm client and Tiller (server side) versions always must match. Simply toggle between different Helm versions installed by brew".
+        echo
+        echo "Usage: helm-toggle <Helm version>"
+        echo
+        echo "installed helm versions are:"
+        brew info --json=v1  kubernetes-helm | jq .[].installed[].version
+        echo "current helm version is:"
+        brew info --json=v1  kubernetes-helm | jq .[].linked_keg
+    else
+        brew switch kubernetes-helm $1 > /dev/null # no appropriate error handling here if someone sets something silly
+    fi
+}
