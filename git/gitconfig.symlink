@@ -205,7 +205,7 @@
         fi; \
     }; f"
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 [difftool "vimdiff"]
     path = /usr/local/bin/vim
 [color]
@@ -234,4 +234,7 @@
     #
     # Setting to git 2.0 default to suppress warning message
     default = simple
-[http]
+[fetch]
+	prune = true
+[difftool]
+	prompt = false

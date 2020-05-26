@@ -26,6 +26,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'NLKNguyen/copy-cut-paste.vim'
 Plug 'klen/python-mode'
 Plug 'shougo/neocomplcache.vim'
+Plug 'udalov/kotlin-vim'
 
 " git
 Plug 'tpope/vim-fugitive'

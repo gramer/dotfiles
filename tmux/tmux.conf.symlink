@@ -43,7 +43,8 @@ bind C-a last-window        # move to last active window
 # -- Copy mode
 bind-key -T copy-mode-vi 'v' send -X begin-selection     # Begin selection in copy mode.
 bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle  # Begin selection in copy mode.
-bind-key -T copy-mode-vi 'y' send -X copy-selection      # Yank selection in copy mode.
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"     # Yank selection in copy mode.
+#bind-key -T copy-mode-vi 'y' send -X copy-selection      # Yank selection in copy mode.
 
 # ===============
 # Display options

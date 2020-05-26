@@ -3,16 +3,17 @@ function kn() {
   if [ ! -z "$namespace" ]
   then
     context=`kubectl config current-context`
-    echo "kubectl config set-context $context --namespace=$namespace"
+    echo "kubectl config set-context $context --namespace=$namespace" | cc
     kubectl config set-context $context --namespace=$namespace
   fi
 }
 
 function knd() {
-  node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup | fzf --height 50% --layout=reverse`
+  node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup -L failure-domain.beta.kubernetes.io/zone | fzf --height 50% --layout=reverse`
   if [ ! -z "$node" ]
   then
     node=`echo $node | cut -d " " -f1`
+    echo "kubectl describe node $node" | cc
     kubectl describe node $node
   fi
 }
@@ -21,13 +22,13 @@ function kc() {
   context=`kubectl config view -o jsonpath='{.contexts[*].name}' | tr " " "\n" | fzf`
   if [ ! -z "$context" ]
   then
-    echo "kubectl config use-context $context"
+    echo "kubectl config use-context $context" | cc
     kubectl config use-context $context
   fi
 }
 
 function kk() {
-  ingress=`kubectl get ingress --all-namespaces -o=jsonpath='{.items[*].spec.rules[].host}' | tr " " "\n" | fzf`
+  ingress=`kubectl get ingress --all-namespaces -o=jsonpath='{.items[*].spec.rules[*].host}' | tr " " "\n" | fzf`
   if [ ! -z "$ingress" ]
   then
     echo "open http://$ingress"
@@ -44,10 +45,31 @@ function ks() {
   fi
   if [ ! -z "$pod" ]
   then
-    echo "kubectl exec -it $pod $sh"
+    echo "kubectl exec -it $pod $sh" | cc
     kubectl exec -it $pod $sh
   fi
 }
+
+function kll() {
+  pod=`kubectl get pods -o=jsonpath='{.items[*].metadata.name}' | tr " " "\n" | fzf`
+  if [ ! -z "$pod" ]
+  then
+    pod=`echo $pod | cut -d " " -f1`
+    echo "kubectl logs --since 10m -f $pod" | cc
+    kubectl logs -f --since 10m $pod
+  fi
+}
+
+function kd() {
+  pod=`kubectl get pods -o wide | fzf`
+  if [ ! -z "$pod" ]
+  then
+    pod=`echo $pod | cut -d " " -f1`
+    echo "kubectl describe pod $pod" | cc
+    kubectl describe pod $pod
+  fi
+}
+
 
 function helm-toggle() {
     if [ -z "$1" ]; then
