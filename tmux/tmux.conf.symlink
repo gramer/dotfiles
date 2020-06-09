@@ -56,7 +56,8 @@ set -g @tasks_format_end '#[fg=white,bg=black]'
 set -g @tasks_icon_urgent '⧗ '
 set -g @tasks_icon_outstanding '+'
 # -- Status bar
-source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+source /Users/zeno.kim/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
+
 set -g status-fg colour231
 set -g status-bg colour234
 set -g status-left-length 50

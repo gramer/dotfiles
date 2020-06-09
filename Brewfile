@@ -4,21 +4,16 @@ cask_args appdir: '/Applications'
 # Taps
 tap "buo/cask-upgrade"
 tap "c-bata/kube-prompt"
-tap "caskroom/cask"
-tap "caskroom/fonts"
+tap "homebrew/cask-fonts"
 tap "derailed/k9s"
 tap "homebrew/bundle"
 tap "homebrew/core"
-tap "homebrew/dupes"
-tap "homebrew/headonly"
 tap "homebrew/services"
-tap "homebrew/versions"
 tap "jenkins-x/jx"
 tap "jenkins-zh/jcli"
 tap "johanhaleby/kubetail"
 tap "mveritym/homebrew-mel"
 tap "pivotal/tap"
-tap "sambadevi/powerlevel9k"
 tap "wagoodman/dive"
 
 
@@ -50,6 +45,7 @@ brew "fleetctl"
 brew "fontconfig"
 brew "fortune"
 brew "freetype"
+brew "fzf"
 brew "gauge"
 brew "gdbm"
 brew "gdk-pixbuf"
@@ -81,7 +77,7 @@ brew "imagemagick"
 brew "jbig2dec"
 brew "jcli"
 brew "jenv"
-brew "jmeter", args: ["with-plugins"]
+brew "jmeter"
 brew "jpeg"
 brew "jq"
 brew "jsonpp"
@@ -127,7 +123,7 @@ brew "pipenv"
 brew "pixman"
 brew "pkg-config"
 brew "portmidi"
-brew "powerlevel9k"
+brew "romkatv/powerlevel10k/powerlevel10k"
 brew "pyenv"
 brew "pyenv-virtualenv"
 brew "python"
@@ -152,14 +148,13 @@ brew "telnet"
 brew "terraform"
 brew "the_silver_searcher"
 brew "tig"
-brew "tomcat@8.0"
 brew "tree"
 brew "tmux"
 brew "tmux-xpanes"
 brew "reattach-to-user-namespace"
 brew "v8"
 brew "v8@3.15"
-brew "vim", args: ["with-override-system-vi"]
+brew "vim"
 brew "watch"
 brew "webp"
 brew "wget"
@@ -173,12 +168,11 @@ brew "zsh"
 
 # Applications
 cask "1password"
-cask "alfred"
+cask "alfred", git: "https://raw.githubusercontent.com/Homebrew/homebrew-cask/64e9549b65c5a84632dc3451c6249fa1c375efb4/Casks/alfred.rb"
 cask "atom"
 # cask "bittorrent"
 cask "boostnote"
 cask "charles"
-cask "clocker"
 cask "dash"
 cask "docker"
 cask "evernote"
@@ -190,13 +184,9 @@ cask "gpg-suite"
 cask "intellij-idea"
 cask "iterm2"
 cask "java"
-cask "java8"
-cask "java11"
-cask "kafka-tool"
-cask "kontena/lens/lens"
+cask "lens"
 cask "liteide"
 cask "mat"
-cask "mindnode-pro"
 cask "nosqlbooster-for-mongodb"
 cask "mysqlworkbench"
 cask "notion"
@@ -214,19 +204,12 @@ cask "vanilla"
 cask "visual-studio-code"
 cask "wireshark"
 
-mas "Amphetamine", id: 937984704
-mas "Clocker", id: 1056643111
-mas "feedly", id: 865500966
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "KakaoTalk", id: 869223134
-mas "Keynote", id: 409183694
-mas "LastPass", id: 926036361
-mas "Memory Clean 2", id: 1114591412
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Pocket", id: 568494494
-mas "RocketFuel", id: 1114196460
-mas "Teampaper Snap", id: 1199502670
-mas "Wallpapers HD Lite", id: 441812880
-mas "Wunderlist", id: 410628904
+# mas "Amphetamine", id: 937984704
+# mas "Clocker", id: 1056643111
+# mas "feedly", id: 865500966
+# mas "KakaoTalk", id: 869223134
+# mas "Memory Clean 2", id: 1114591412
+# mas "RocketFuel", id: 1114196460
+# mas "Teampaper Snap", id: 1199502670
+# mas "Wallpapers HD Lite", id: 441812880
+# mas "Wunderlist", id: 410628904
