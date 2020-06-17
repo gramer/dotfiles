@@ -27,6 +27,15 @@ function kc() {
   fi
 }
 
+function kcc() {
+  config_file=`ls ~/.kube/config.* | fzf`
+  if [ ! -z "$config_file" ]
+  then
+    echo "ln -sf $config_file $HOME/.kube/config" | cc
+    ln -sf $config_file $HOME/.kube/config
+  fi
+}
+
 function kk() {
   ingress=`kubectl get ingress --all-namespaces -o=jsonpath='{.items[*].spec.rules[*].host}' | tr " " "\n" | fzf`
   if [ ! -z "$ingress" ]
