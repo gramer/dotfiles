@@ -59,7 +59,7 @@ function ks() {
   fi
 }
 
-function kll() {
+function kl() {
   pod=`kubectl get pods -o=jsonpath='{.items[*].metadata.name}' | tr " " "\n" | fzf`
   if [ ! -z "$pod" ]
   then

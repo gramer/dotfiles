@@ -204,6 +204,15 @@
             echo '';\
         fi; \
     }; f"
+    alias-tools = "!#----------------------------------------------------------;\n\
+        git alias | egrep 'Tool:' -i"
+    ic = "!# Tool: Initialize conventional commits.;\n\
+        f() { \
+            echo '{\"husky\":{\"hooks\":{\"commit-msg\":\"commitlint -E HUSKY_GIT_PARAMS\"}}}' > package.json; \
+            npm install --save-dev @commitlint/config-conventional @commitlint/cli; \
+            echo 'module.exports = {extends: [\"@commitlint/config-conventional\"]}' > commitlint.config.js ; \
+            npm install husky --save-dev ; \
+        }; f"
 [diff]
 	tool = vimdiff
 [difftool "vimdiff"]
@@ -238,3 +247,6 @@
 	prune = true
 [difftool]
 	prompt = false
+[user]
+	name = zeno.kim
+	email = zeno.kim@kakaopaycorp.com

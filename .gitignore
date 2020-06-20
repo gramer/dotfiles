@@ -9,3 +9,8 @@ atom.symlink/themes
 
 git/gitconfig.local.symlink
 /.idea/
+/zsh/zshrc.d.symlink/kakao.zsh
+/atom.symlink/.atom-socket-secret-zeno.kim-1.47.0
+/Brewfile.lock.json
+/git/package.json
+/package-lock.json
