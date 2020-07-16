@@ -66,6 +66,7 @@ brew "goaccess"
 brew "gobject-introspection"
 brew "gradle"
 brew "grafana"
+brew "goodwithtech/r/dockle"
 brew "graphviz"
 brew "groovy"
 brew "gtk+"
@@ -178,8 +179,10 @@ cask "dash"
 cask "docker"
 cask "evernote"
 cask "postman"
+cask "pycharm"
 cask "firefox"
 cask "font-hack-nerd-font"
+cask "goland"
 cask "google-backup-and-sync"
 cask "google-chrome"
 cask "gpg-suite"
@@ -216,3 +219,16 @@ cask "wireshark"
 # mas "Teampaper Snap", id: 1199502670
 # mas "Wallpapers HD Lite", id: 441812880
 # mas "Wunderlist", id: 410628904
+# 
+# 865500966 feedly (1.1)
+# 869223134 카카오톡 (2.7.6)
+# 409203825 Numbers (10.0)
+# 682658836 GarageBand (10.3.4)
+# 408981434 iMovie (10.1.14)
+# 409201541 Pages (10.0)
+# 441812880 Wallpapers HD Lite (1.4)
+# 409183694 Keynote (10.0)
+# 1199502670 Teampaper Snap (2.2.5)
+# 439654198 SimpleMind Lite (1.26.0)
+# 1114196460 RocketFuel (2.3.1)
+

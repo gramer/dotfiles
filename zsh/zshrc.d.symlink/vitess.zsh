@@ -1,0 +1,1 @@
+alias vc="vtctlclient"

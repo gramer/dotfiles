@@ -13,15 +13,17 @@ alias cleanIdea="find . -name '*.iml' -exec rm {} \;; rm -rf .idea"
 alias calicoctl="kubectl exec -i -n kube-system calicoctl /calicoctl -- "
 alias kops="kubectl exec -i -n openfaas \`kubectl get pod -n openfaas -l faas_function=create-instancegroup -o=jsonpath="{.items..metadata.name}"\` -- kops"
 # alias aws="kubectl exec -i -n tools kops aws -- "
-alias e='exa -lh'
-alias ee='exa -labghHS'
+#alias e='exa -lh'
+#alias ee='exa -labghHS'
 alias eh='e | head'
 alias grep='grep --color=auto'
 alias h="history"
 alias l='ls -alF'
 alias la='ls -A'
 alias lg="git lh"
-alias ll='ls -lA'
+#alias ll='ls -lA'
+alias ll='exa -labghHS'
+alias l='exa -lh'
 alias ls='ls -G'
 alias lt='ls -lht | head -n 15'
 alias p='pwd'

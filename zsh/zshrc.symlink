@@ -21,7 +21,7 @@ LC_TIME="ko_KR.UTF-8"
 # }}}
 
 # env directories {{{
-export BASE=/zeno
+export BASE=${HOME}/Documents/ZenoHome
 export PROGRAM_BASE=$BASE/program
 export SERVICE_BASE=$BASE/service
 export SCRIPTS_BASE=$BASE/scripts
@@ -74,10 +74,10 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse"
 
 # autoenv {{{
 # [ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh
-# }}}
+#}}}
 
 # direnv {{{
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 # }}}
 
 # tools completion {{{
@@ -92,7 +92,7 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse"
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-export PATH=$PATH:/usr/local/opt/go/libexec/bin:/usr/local/opt/nvm
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:/usr/local/opt/nvm:$GOPATH/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
