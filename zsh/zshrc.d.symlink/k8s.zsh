@@ -9,7 +9,8 @@ function kn() {
 }
 
 function knd() {
-  node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup -L failure-domain.beta.kubernetes.io/zone | fzf --height 50% --layout=reverse`
+  # node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup -L failure-domain.beta.kubernetes.io/zone | fzf --height 50% --layout=reverse`
+  node=`kubectl get node -o wide | fzf --height 50% --layout=reverse`
   if [ ! -z "$node" ]
   then
     node=`echo $node | cut -d " " -f1`
@@ -47,7 +48,7 @@ function kk() {
 
 function ks() {
   pod=`kubectl get pods -o=jsonpath='{.items[*].metadata.name}' | tr " " "\n" | fzf`
-  sh=sh
+  sh=bash
   if [ ! -z "$1" ]
   then
     sh=$1
@@ -55,12 +56,12 @@ function ks() {
   if [ ! -z "$pod" ]
   then
     echo "kubectl exec -it $pod $sh" | cc
-    kubectl exec -it $pod $sh
+    kubectl exec -it $pod -- $sh -o vi
   fi
 }
 
 function kl() {
-  pod=`kubectl get pods -o=jsonpath='{.items[*].metadata.name}' | tr " " "\n" | fzf`
+  pod=`kubectl get pod --no-headers | fzf`
   if [ ! -z "$pod" ]
   then
     pod=`echo $pod | cut -d " " -f1`
