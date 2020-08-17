@@ -250,3 +250,5 @@
 [user]
 	name = zeno.kim
 	email = zeno.kim@kakaopaycorp.com
+[diff "sopsdiffer"]
+	textconv = sops -d

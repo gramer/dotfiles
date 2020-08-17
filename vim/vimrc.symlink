@@ -60,6 +60,8 @@ set wildmode=list:longest,full
 set mouse=a
 set switchbuf=usetab
 set foldmethod=marker
+set backspace=indent,eol,start
+
 " }}}
 
 " formatting {{{

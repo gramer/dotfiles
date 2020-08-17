@@ -1,5 +1,5 @@
 function kn() {
-  namespace=`kubectl get namespaces -o=jsonpath='{range .items[*].metadata.name}{@}{"\n"}{end}' | fzf --height 50% --layout=reverse`
+  namespace=`kubectl get namespaces -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
   if [ ! -z "$namespace" ]
   then
     context=`kubectl config current-context`
@@ -9,8 +9,9 @@ function kn() {
 }
 
 function knd() {
-  # node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup -L failure-domain.beta.kubernetes.io/zone | fzf --height 50% --layout=reverse`
-  node=`kubectl get node -o wide | fzf --height 50% --layout=reverse`
+#  node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup -L failure-domain.beta.kubernetes.io/zone | fzf --height 50% --layout=reverse`
+  node=`kubectl get node -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
+#  node=`kubectl get node jsonpath=$NODE_JSON_PATH | fzf --header-lines=1 | cut -d ' ' -f 1`
   if [ ! -z "$node" ]
   then
     node=`echo $node | cut -d " " -f1`
@@ -47,7 +48,7 @@ function kk() {
 }
 
 function ks() {
-  pod=`kubectl get pods -o=jsonpath='{.items[*].metadata.name}' | tr " " "\n" | fzf`
+  pod=`kubectl get pods -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
   sh=bash
   if [ ! -z "$1" ]
   then
@@ -61,7 +62,7 @@ function ks() {
 }
 
 function kl() {
-  pod=`kubectl get pod --no-headers | fzf`
+  pod=`kubectl get pod -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
   if [ ! -z "$pod" ]
   then
     pod=`echo $pod | cut -d " " -f1`
@@ -71,7 +72,7 @@ function kl() {
 }
 
 function kd() {
-  pod=`kubectl get pods -o wide | fzf`
+  pod=`kubectl get pods -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
   if [ ! -z "$pod" ]
   then
     pod=`echo $pod | cut -d " " -f1`
