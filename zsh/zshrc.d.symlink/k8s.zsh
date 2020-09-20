@@ -1,23 +1,39 @@
-function kn() {
-  namespace=`kubectl get namespaces -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
-  if [ ! -z "$namespace" ]
+funtion kubectl_template() {
+  resource="$1"
+  command="$2"
+  option="$3"
+  it=`kubectl get "$resource" -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
+  if [ ! -z "$it" ]
   then
-    context=`kubectl config current-context`
-    echo "kubectl config set-context $context --namespace=$namespace" | cc
-    kubectl config set-context $context --namespace=$namespace
+    it=`echo $it | cut -d " " -f1`
+    echo "$command$it $option" | cc
+    eval "$command$it $option"
   fi
 }
 
+function kn() {
+    context=`kubectl config current-context`
+    kubectl_template "namespaces" "kubectl config set-context $context --namespace="
+}
+
 function knd() {
-#  node=`kubectl get node -L beta.kubernetes.io/instance-type -L kops.k8s.io/instancegroup -L failure-domain.beta.kubernetes.io/zone | fzf --height 50% --layout=reverse`
-  node=`kubectl get node -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
-#  node=`kubectl get node jsonpath=$NODE_JSON_PATH | fzf --header-lines=1 | cut -d ' ' -f 1`
-  if [ ! -z "$node" ]
-  then
-    node=`echo $node | cut -d " " -f1`
-    echo "kubectl describe node $node" | cc
-    kubectl describe node $node
-  fi
+  kubectl_template "node" "kubectl describe node "
+}
+
+function ks() {
+  kubectl_template "pod" "kubectl exec -it " "-- bash -o vi"
+}
+
+function kl() {
+  kubectl_template "pod" "kubectl logs --since 10m -f "
+}
+
+function kd() {
+  kubectl_template "pod" "kubectl describe pod "
+}
+
+function kst() {
+  kubectl_template "secret" "kubedecode " "`kubectl config view --minify --output 'jsonpath={..namespace}'`"
 }
 
 function kc() {
@@ -46,41 +62,6 @@ function kk() {
     open http://$ingress
   fi
 }
-
-function ks() {
-  pod=`kubectl get pods -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
-  sh=bash
-  if [ ! -z "$1" ]
-  then
-    sh=$1
-  fi
-  if [ ! -z "$pod" ]
-  then
-    echo "kubectl exec -it $pod $sh" | cc
-    kubectl exec -it $pod -- $sh -o vi
-  fi
-}
-
-function kl() {
-  pod=`kubectl get pod -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
-  if [ ! -z "$pod" ]
-  then
-    pod=`echo $pod | cut -d " " -f1`
-    echo "kubectl logs --since 10m -f $pod" | cc
-    kubectl logs -f --since 10m $pod
-  fi
-}
-
-function kd() {
-  pod=`kubectl get pods -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
-  if [ ! -z "$pod" ]
-  then
-    pod=`echo $pod | cut -d " " -f1`
-    echo "kubectl describe pod $pod" | cc
-    kubectl describe pod $pod
-  fi
-}
-
 
 function helm-toggle() {
     if [ -z "$1" ]; then
