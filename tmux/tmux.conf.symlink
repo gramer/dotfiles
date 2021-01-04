@@ -7,7 +7,8 @@ set -g @tpm_plugins '               \
     'tmux-plugins/tmux-sensible'    \
     'chriszarate/tmux-tasks'        \
     'nhdaly/tmux-better-mouse-mode' \
-    'tmux-plugins/tmux-urlview'     \
+    'wfxr/tmux-fzf-url'	            \
+    'tmux-plugins/tmux-open'        \
 '
 
 # ===============
@@ -70,6 +71,8 @@ set -g window-status-format "#[fg=colour254,bg=colour234]#I #[fg=colour254] #
 set -g window-status-current-format "#[fg=colour234,bg=colour238]#[fg=colour254,bg=colour238] #I  #[fg=colour254,bold]#W #[fg=colour238,bg=colour234,nobold]"
 set -g window-style 'fg=colour247,bg=colour236'
 set -g window-active-style 'fg=colour250,bg=black'
+set -g @open-S 'https://www.google.com/search?q='
+
 
 # ===============
 # Utils

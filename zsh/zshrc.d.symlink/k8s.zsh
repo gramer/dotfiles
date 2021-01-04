@@ -6,7 +6,7 @@ funtion kubectl_template() {
   if [ ! -z "$it" ]
   then
     it=`echo $it | cut -d " " -f1`
-    echo "$command$it $option" | cc
+    echo -n "$command$it $option" | cc
     eval "$command$it $option"
   fi
 }
@@ -40,7 +40,7 @@ function kc() {
   context=`kubectl config view -o jsonpath='{.contexts[*].name}' | tr " " "\n" | fzf`
   if [ ! -z "$context" ]
   then
-    echo "kubectl config use-context $context" | cc
+    echo -n "kubectl config use-context $context" | cc
     kubectl config use-context $context
   fi
 }
@@ -49,7 +49,7 @@ function kcc() {
   config_file=`ls ~/.kube/config.* | fzf`
   if [ ! -z "$config_file" ]
   then
-    echo "ln -sf $config_file $HOME/.kube/config" | cc
+    echo -n "ln -sf $config_file $HOME/.kube/config" | cc
     ln -sf $config_file $HOME/.kube/config
   fi
 }
@@ -60,6 +60,15 @@ function kk() {
   then
     echo "open http://$ingress"
     open http://$ingress
+  fi
+}
+
+function hs() {
+  helm=`helm ls | fzf --header-lines=1 | cut -f 1`
+  if [ ! -z "helm" ]
+  then
+    echo -n "helm fullstatus $helm" | cc
+    helm fullstatus $helm
   fi
 }
 
