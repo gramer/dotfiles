@@ -21,11 +21,18 @@ function knd() {
 }
 
 function ks() {
-  kubectl_template "pod" "kubectl exec -it " "-- bash -o vi"
+  kubectl_template "pod" "kubectl exec -it " "-- sh -o vi"
 }
 
 function kl() {
-  kubectl_template "pod" "kubectl logs --since 10m -f "
+  pod=`kubectl get pod -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
+  if [ ! -z "$pod" ]
+  then
+    pod=`echo $pod | cut -d " " -f1`
+    container=`kubectl get pod "$pod" -o jsonpath='{.spec.containers[*].name}' | tr ' ' "\n" | fzf`
+    echo -n "kubectl logs $pod --tail 300 -f -c $container" | cc
+    eval "kubectl logs $pod --tail 300 -f -c $container"
+  fi
 }
 
 function kd() {
