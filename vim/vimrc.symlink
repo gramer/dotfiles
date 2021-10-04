@@ -118,8 +118,8 @@ noremap  <c-n> :new<cr>
 " }}}
 
 " move buffer {{{
-nnoremap <c-s-tab> :bprevious<cr>
-nnoremap <c-tab> :bnext<cr>
+map<c-s-up> :bprevious<CR>
+map <c-s-down> :bnext<CR>
 "}}}
 
 " rainbow parentheses {{{

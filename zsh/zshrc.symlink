@@ -1,3 +1,4 @@
+export SCOUT_DISABLE=1
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,8 +8,6 @@ fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #!/bin/zsh
@@ -43,7 +42,7 @@ export PATH="/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$SCRIPTS_
 export ZSH=$HOME/.oh-my-zsh
 plugins=(
 autojump
-docker
+#docker
 git
 golang
 #helm
@@ -61,33 +60,20 @@ zsh_reload
 
 export HISTTIMEFORMAT="%d/%m/%y %T "
 source $ZSH/oh-my-zsh.sh
+# }}}
 
-# load all files from .shell/zshrc.d directory
+# load all files from .shell/zshrc.d directory {{{
 if [ -d $HOME/.zshrc.d ]; then
   for file in $HOME/.zshrc.d/*.zsh; do
     source ${file}
   done
 fi
-
 # }}}
 
 # fuzzy finder {{{
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height 40% --reverse"
 # }}}
-
-# autoenv {{{
-# [ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh
-#}}}
-
-# direnv {{{
-eval "$(direnv hook zsh)"
-# }}}
-
-# tools completion {{{
-
-# }}}
-
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -97,7 +83,20 @@ eval "$(direnv hook zsh)"
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:/usr/local/opt/nvm:$GOPATH/bin
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export TMUX_TMPDIR=~/.tmux/tmp
+
+# initialize tools {{{
+# [ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# fig
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+
+# broot
+source /Users/zeno.kim/.config/broot/launcher/bash/br
+
+# navi
+eval "$(navi widget zsh)"
+# }}}

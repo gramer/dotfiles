@@ -21,6 +21,16 @@ function knd() {
 }
 
 function ks() {
+  pod=`kubectl get pod -o wide | fzf --header-lines=1 | cut -d ' ' -f 1`
+  if [ ! -z "$pod" ]
+  then
+    pod=`echo $pod | cut -d " " -f1`
+    container=`kubectl get pod "$pod" -o jsonpath='{.spec.containers[*].name}' | tr ' ' "\n" | fzf`
+    echo -n "kubectl exec -it $pod -c $container -- sh -o vi" | cc
+    eval "kubectl exec -it $pod -c $container -- sh -o vi"
+    return
+  fi
+
   kubectl_template "pod" "kubectl exec -it " "-- sh -o vi"
 }
 
@@ -32,11 +42,30 @@ function kl() {
     container=`kubectl get pod "$pod" -o jsonpath='{.spec.containers[*].name}' | tr ' ' "\n" | fzf`
     echo -n "kubectl logs $pod --tail 300 -f -c $container" | cc
     eval "kubectl logs $pod --tail 300 -f -c $container"
+    return
+  fi
+}
+
+function kdd() {
+  resource="deployment"
+  it=`kubectl get "$resource" | fzf --header-lines=1 | cut -d ' ' -f 1`
+  command="kubectl describe $resource "
+  option=""
+
+  if [ ! -z "$it" ]
+  then
+    it=`echo $it | cut -d " " -f1`
+    echo -n "$command$it $option" | cc
+    eval "$command$it $option"
   fi
 }
 
 function kd() {
   kubectl_template "pod" "kubectl describe pod "
+}
+
+function kw() {
+  eval "kubectl get pod -w"
 }
 
 function kst() {
@@ -62,7 +91,7 @@ function kcc() {
 }
 
 function kk() {
-  ingress=`kubectl get ingress --all-namespaces -o=jsonpath='{.items[*].spec.rules[*].host}' | tr " " "\n" | fzf`
+  ingress=`kubectl get ingress -o custom-columns='NAME:.metadata.name,HOSTS:.spec.rules[*].host' | fzf --header-lines 1 | awk '{print $2}'`
   if [ ! -z "$ingress" ]
   then
     echo "open http://$ingress"

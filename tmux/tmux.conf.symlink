@@ -91,3 +91,6 @@ bind r source-file ~/.tmux.conf
 
 # -- Initialize TMUX plugin manager
 run '~/.tmux/plugins/tpm/tpm'
+# Fig Tmux Integration: Enabled
+source-file ~/.fig/tmux
+# End of Fig Tmux Integration
