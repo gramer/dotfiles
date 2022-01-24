@@ -2,10 +2,12 @@
 cask_args appdir: '/Applications'
 
 # Taps
+tap "blacknon/hwatch"
 tap "buo/cask-upgrade"
 tap "c-bata/kube-prompt"
 tap "cantino/mcfly"
 tap "derailed/k9s"
+tap "elastic/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
@@ -82,6 +84,7 @@ brew "harfbuzz"
 brew "hostess"
 brew "htop-osx"
 brew "httpie"
+brew "hwatch"
 brew "icu4c"
 brew "imagemagick"
 brew "jbig2dec"

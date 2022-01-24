@@ -31,7 +31,7 @@ bind -n M-Down select-pane -D
 bind -n S-Left  previous-window
 bind -n S-Right next-window
 # -- Disable window name auto change
-set-option -g allow-rename off
+#set-option -g allow-rename off
 # -- Scroll back buffer size increase
 set -g history-limit 100000
 # -- Mouse
@@ -72,6 +72,7 @@ set -g window-status-current-format "#[fg=colour234,bg=colour238]#[fg=colour2
 set -g window-style 'fg=colour247,bg=colour236'
 set -g window-active-style 'fg=colour250,bg=black'
 set -g @open-S 'https://www.google.com/search?q='
+set -g pane-border-status top
 
 
 # ===============
@@ -85,7 +86,7 @@ bind-key -n C-S-Right swap-window -t +1
 # -- Toggle pane title visibility
 bind T run 'zsh -c "arr=( off top ) && tmux setw pane-border-status \${arr[\$(( \${arr[(I)#{pane-border-status}]} % 2 + 1 ))]}"'
 # -- Rename pane
-bind t command-prompt -p "(rename-pane)" -I "#T" "select-pane -T '%%'"
+# bind t command-prompt -p "(rename-pane)" -I "#T" "select-pane -T '%%'"
 # -- reload config file (change file location to your the tmux.conf you want to use)
 bind r source-file ~/.tmux.conf
 
@@ -93,4 +94,4 @@ bind r source-file ~/.tmux.conf
 run '~/.tmux/plugins/tpm/tpm'
 # Fig Tmux Integration: Enabled
 source-file ~/.fig/tmux
-# End of Fig Tmux Integration
+#cluster End of Fig Tmux Integration

@@ -100,3 +100,5 @@ source /Users/zeno.kim/.config/broot/launcher/bash/br
 # navi
 eval "$(navi widget zsh)"
 # }}}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

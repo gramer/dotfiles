@@ -252,3 +252,5 @@
 	email = zeno.kim@kakaopaycorp.com
 [diff "sopsdiffer"]
 	textconv = sops -d
+[init]
+	defaultBranch = main

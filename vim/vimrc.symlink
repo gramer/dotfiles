@@ -32,7 +32,7 @@ Plug 'shougo/neocomplcache.vim'
 Plug 'udalov/kotlin-vim'
 
 " git
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
 
 " tools 
