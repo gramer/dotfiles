@@ -65,7 +65,7 @@ function kd() {
 }
 
 function kw() {
-  eval "kubectl get pod -w"
+  eval "kubectl get pod -o wide -w"
 }
 
 function kst() {
