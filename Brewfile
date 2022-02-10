@@ -8,15 +8,16 @@ tap "c-bata/kube-prompt"
 tap "cantino/mcfly"
 tap "derailed/k9s"
 tap "elastic/tap"
+tap "goodwithtech/r"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "jenkins-x/jx"
-tap "jenkins-zh/jcli"
 tap "johanhaleby/kubetail"
 tap "mveritym/homebrew-mel"
 tap "pivotal/tap"
+tap "romkatv/powerlevel10k"
+tap "spring-io/tap"
 tap "wagoodman/dive"
 
 
@@ -88,13 +89,11 @@ brew "hwatch"
 brew "icu4c"
 brew "imagemagick"
 brew "jbig2dec"
-brew "jcli"
 brew "jenv"
 brew "jmeter"
 brew "jpeg"
 brew "jq"
 brew "jsonpp"
-brew "jx"
 brew "k9s"
 brew "kafka"
 brew "kops", args: ["HEAD"]
@@ -102,7 +101,7 @@ brew "kube-prompt"
 brew "kube-ps1"
 brew "kubectx"
 brew "kubedecode"
-brew "kubernetes-helm"
+brew "helm"
 brew "kubetail"
 brew "libevent"
 brew "libffi"
@@ -170,7 +169,6 @@ brew "tmux"
 brew "tmux-xpanes"
 brew "tree"
 brew "v8"
-brew "v8@3.15"
 brew "vim"
 brew "watch"
 brew "webp"
@@ -187,7 +185,6 @@ brew "zsh"
 # cask "bittorrent"
 # cask "boostnote"
 cask "1password"
-cask "alfred", git: "https://raw.githubusercontent.com/Homebrew/homebrew-cask/64e9549b65c5a84632dc3451c6249fa1c375efb4/Casks/alfred.rb"
 cask "atom"
 cask "charles"
 cask "dash"
@@ -199,7 +196,6 @@ cask "google-drive"
 cask "google-chrome"
 cask "gpg-suite"
 cask "iterm2"
-cask "java"
 cask "jetbrains-toolbox"
 cask "lens"
 cask "liteide"
@@ -215,37 +211,25 @@ cask "razorsql"
 cask "rectangle"
 cask "scapple"
 cask "slack"
-cask "spectacle"
-cask "tableau"
-cask "tableplus"
 cask "the-unarchiver"
-cask "vagrant"
 cask "vanilla"
 cask "visual-studio-code"
 cask "vmware-horizon-client"
 cask "wallpaper-wizard"
 cask "wireshark"
 
-# mas "Amphetamine", id: 937984704
-# mas "Clocker", id: 1056643111
-# mas "feedly", id: 865500966
-# mas "KakaoTalk", id: 869223134
-# mas "Memory Clean 2", id: 1114591412
-# mas "RocketFuel", id: 1114196460
-# mas "Teampaper Snap", id: 1199502670
-# mas "Wallpapers HD Lite", id: 441812880
-# mas "Wunderlist", id: 410628904
-# 
-# 865500966 feedly (1.1)
-# 869223134 카카오톡 (2.7.6)
-# 409203825 Numbers (10.0)
-# 682658836 GarageBand (10.3.4)
-# 408981434 iMovie (10.1.14)
-# 409201541 Pages (10.0)
-# 441812880 Wallpapers HD Lite (1.4)
-# 409183694 Keynote (10.0)
-# 1199502670 Teampaper Snap (2.2.5)
-# 439654198 SimpleMind Lite (1.26.0)
-# 1114196460 RocketFuel (2.3.1)
-# 512617038  Snappy - Snapshots, the smart way. (2.0.1) 
-
+mas "Alfred", id: 405843582
+mas "Clocker", id: 1056643111
+mas "GarageBand", id: 682658836
+mas "KakaoTalk", id: 869223134
+mas "Keynote", id: 409183694
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "RocketFuel", id: 1114196460
+mas "SimpleMind Lite", id: 439654198
+mas "Skitch", id: 425955336
+mas "Teampaper Snap", id: 1199502670
+mas "Wallpapers HD Lite", id: 441812880
+mas "feedly", id: 865500966
+mas "iMovie", id: 408981434
