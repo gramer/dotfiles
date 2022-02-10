@@ -57,7 +57,7 @@ set -g @tasks_format_end '#[fg=white,bg=black]'
 set -g @tasks_icon_urgent '⧗ '
 set -g @tasks_icon_outstanding '+'
 # -- Status bar
-source /Users/zeno.kim/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
+source "$HOME"/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
 
 set -g status-fg colour231
 set -g status-bg colour234
@@ -91,7 +91,7 @@ bind T run 'zsh -c "arr=( off top ) && tmux setw pane-border-status \${arr[\$(( 
 bind r source-file ~/.tmux.conf
 
 # -- Initialize TMUX plugin manager
-run '~/.tmux/plugins/tpm/tpm'
+run "$HOME"/.tmux/plugins/tpm/tpm
 # Fig Tmux Integration: Enabled
 source-file ~/.fig/tmux
 #cluster End of Fig Tmux Integration

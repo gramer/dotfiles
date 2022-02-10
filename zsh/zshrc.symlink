@@ -103,13 +103,11 @@ export TMUX_TMPDIR=~/.tmux/tmp
 eval "$(direnv hook zsh)"
 
 # fig
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+[ -f "$HOME"/.fig/fig.sh ] && source "$HOME"/.fig/fig.sh
 
 # broot
-source /Users/zeno.kim/.config/broot/launcher/bash/br
+[ -f "$HOME"/.config/broot/launcher/bash/br ] && source "$HOME"/.config/broot/launcher/bash/br
 
 # navi
 eval "$(navi widget zsh)"
 # }}}
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

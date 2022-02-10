@@ -36,7 +36,7 @@ alias t='tree'
 alias tf='tail -f $LOGS_BASE/catalina_logs/catalina.out'
 alias vi2='vi -O2 '
 
-export OH_MY_ZSH_PLUGIN_HOME='/Users/zeno.kim/.oh-my-zsh/plugins'
+export OH_MY_ZSH_PLUGIN_HOME="$HOME/.oh-my-zsh/plugins"
 alias load-rbenv='[ -f "$OH_MY_ZSH_PLUGIN_HOME/rbenv/rbenv.plugin.zsh" ] && source "$OH_MY_ZSH_PLUGIN_HOME/rbenv/rbenv.plugin.zsh"'
 alias load-nvm='[ - /usr/local/opt/nvm/nvm.sh ] && source /usr/local/opt/nvm/nvm.sh'
 
