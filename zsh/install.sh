@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+echo "Install zsh by https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
+echo "Install zplug by https://github.com/zplug/zplug#the-best-way"
+
+if [ ! -d ~/.zplug ]; then
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
+
