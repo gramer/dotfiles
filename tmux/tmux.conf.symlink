@@ -57,7 +57,7 @@ set -g @tasks_format_end '#[fg=white,bg=black]'
 set -g @tasks_icon_urgent '⧗ '
 set -g @tasks_icon_outstanding '+'
 # -- Status bar
-source "$HOME"/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
+#source "$HOME"/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
 
 set -g status-fg colour231
 set -g status-bg colour234

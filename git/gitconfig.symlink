@@ -248,8 +248,8 @@
 [difftool]
 	prompt = false
 [user]
-	name = zeno.kim
-	email = zeno.kim@kakaopaycorp.com
+	name = gramer 
+	email = gramer2188@gmail.com
 [diff "sopsdiffer"]
 	textconv = sops -d
 [init]

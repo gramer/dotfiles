@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Install zsh by https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+echo "Install zsh by https:c//raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Install zplug by https://github.com/zplug/zplug#the-best-way"
 
