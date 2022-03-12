@@ -19,6 +19,7 @@ alias eh='e | head'
 alias grep='grep --color=auto'
 alias h="history"
 alias hl='helm ls --namespace `kubectl config view --minify --output jsonpath={..namespace}`'
+alias hw='hwatch'
 alias kops="kubectl exec -i -n openfaas \`kubectl get pod -n openfaas -l faas_function=create-instancegroup -o=jsonpath="{.items..metadata.name}"\` -- kops"
 alias l='ls -alF'
 alias la='ls -A'
