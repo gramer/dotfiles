@@ -61,11 +61,11 @@ zplug "reegnz/jq-zsh-plugin"
 #zplug "plugins/"#helm", from:oh-my-zsh
 #zplug "plugins/"systemadmin", from:oh-my-zsh
 #zplug "plugins/"terraform", from:oh-my-zs
-#zplug "plugins/git", from:oh-my-zsh
 #zplug "plugins/golang", from:oh-my-zsh
 #zplug "plugins/node", from:oh-my-zsh
 #zplug "plugins/python", from:oh-my-zsh
 #zplug "plugins/ruby", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/autojump", from:oh-my-zsh
 zplug "plugins/kubectl", from:oh-my-zsh
@@ -126,3 +126,8 @@ eval "$(navi widget zsh)"
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH="/opt/homebrew/bin:$PATH"
