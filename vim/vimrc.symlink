@@ -10,7 +10,7 @@ Plug 'NLKNguyen/copy-cut-paste.vim'
 " appearance
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dracula/vim'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " browsering

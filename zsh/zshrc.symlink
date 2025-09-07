@@ -1,10 +1,6 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export SCOUT_DISABLE=1
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -12,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #!/bin/zsh
@@ -77,7 +73,7 @@ zplug "plugins/zsh_reload", from:oh-my-zsh
 # Install plugins if there are plugins that have not been installed
 zplug check || zplug install
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
 # }}}
 
 # load all files from .shell/zshrc.d directory {{{
@@ -109,9 +105,6 @@ export TMUX_TMPDIR=~/.tmux/tmp
 # direnv
 eval "$(direnv hook zsh)"
 
-# fig
-[ -f "$HOME"/.fig/fig.sh ] && source "$HOME"/.fig/fig.sh
-
 # broot
 [ -f "$HOME"/.config/broot/launcher/bash/br ] && source "$HOME"/.config/broot/launcher/bash/br
 
@@ -121,13 +114,10 @@ eval "$(navi widget zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/opt/homebrew/bin:$PATH"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
