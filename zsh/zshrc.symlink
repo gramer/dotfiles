@@ -1,3 +1,4 @@
+HOMEBREW_NO_AUTO_UPDATE=1
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 export SCOUT_DISABLE=1
@@ -68,6 +69,7 @@ zplug "plugins/kubectl", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
+zplug "MichaelAquilina/zsh-you-should-use"
 zplug "plugins/zsh_reload", from:oh-my-zsh
 
 # Install plugins if there are plugins that have not been installed

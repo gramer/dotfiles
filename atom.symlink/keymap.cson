@@ -1,0 +1,3 @@
+# atom-workspace
+'atom-workspace':
+  'alt-shift-cmd-P': 'command-palette:toggle'

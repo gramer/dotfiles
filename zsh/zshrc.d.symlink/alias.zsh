@@ -6,10 +6,17 @@ alias .....='cd ../../../..'
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
+alias aa='alias| fzf'
+alias ad='ansible-doc'
+alias bat='bat -p'
 alias bb='brew bundle'
+alias bu='brew upgrade `brew list -1 | fzf`'
+alias bl='brew list'
+alias blf='brew list | fzf'
 alias bs='brew search'
 alias c='clear'
 alias calicoctl="kubectl exec -i -n kube-system calicoctl /calicoctl -- "
+alias cat='bat -p'
 alias cc='clipcopy'
 alias cleanIdea="find . -name '*.iml' -exec rm {} \;; rm -rf .idea"
 alias e='eza -lh'
@@ -34,23 +41,21 @@ alias pc='pwd | clipcopy'
 alias s='storm'
 alias sz="source ~/.zshrc"
 alias t='tree'
-alias tf='tail -f $LOGS_BASE/catalina_logs/catalina.out'
+alias t1='tree -L 1'
+alias t2='tree -L 2'
+alias tt='tree -L 2'
+alias t3='tree -L 3'
 alias vi2='vi -O2 '
 
 export OH_MY_ZSH_PLUGIN_HOME="$HOME/.oh-my-zsh/plugins"
 alias load-rbenv='[ -f "$OH_MY_ZSH_PLUGIN_HOME/rbenv/rbenv.plugin.zsh" ] && source "$OH_MY_ZSH_PLUGIN_HOME/rbenv/rbenv.plugin.zsh"'
 alias load-nvm='[ - /usr/local/opt/nvm/nvm.sh ] && source /usr/local/opt/nvm/nvm.sh'
 
-alias load-minikube='eval "$(minikube completion zsh)"'
-alias load-minishift='eval "$(minishift completion zsh)"'
+#alias load-minikube='eval "$(minikube completion zsh)"'
+#alias load-minishift='eval "$(minishift completion zsh)"'
 alias load-pipenv='eval "$(pipenv --completion)"'
-alias load-kops='eval "$(kops completion zsh)"'
-alias load-helm='eval "$(helm completion zsh)"'
-
-alias bfg='java -jar /zeno/program/bfg'
-
-# ansible
-alias ad='ansible-doc'
+#alias load-kops='eval "$(kops completion zsh)"'
+#alias load-helm='eval "$(helm completion zsh)"'
 # }}}
 
 alias vimupdate='vim +PluUpdate +qall'

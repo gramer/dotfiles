@@ -5,8 +5,6 @@ tap "derailed/k9s"
 tap "elastic/tap"
 tap "goodwithtech/r"
 tap "jetbrains/utils"
-tap "johanhaleby/kubetail"Í
-tap "kubeshark/kubeshark"
 tap "mongodb/brew"
 tap "mveritym/mel"
 tap "pivotal/tap"
@@ -29,6 +27,7 @@ brew "autojump"
 brew "automake"
 brew "awscli"
 brew "bash"
+brew "bat"
 brew "black"
 brew "broot"
 brew "cairo"
@@ -80,6 +79,7 @@ brew "gnutls"
 brew "go"
 brew "goaccess"
 brew "gobject-introspection"
+brew "gonzo"
 brew "gomplate"
 brew "goodwithtech/r/dockle"
 brew "gradle"
@@ -99,7 +99,6 @@ brew "jbig2dec"
 brew "jenv"
 brew "jetbrains/utils/qodana"
 brew "jmeter"
-brew "johanhaleby/kubetail/kubetail"
 brew "jpeg"
 brew "jpeg-xl"
 brew "jq"
@@ -111,7 +110,6 @@ brew "kops", args: ["HEAD"]
 brew "krew"
 brew "kube-ps1"
 brew "kubectx"
-brew "kubeshark/kubeshark/kubeshark"
 brew "libavif"
 brew "libevent"
 brew "libffi"
@@ -225,7 +223,6 @@ cask "charles", args: { appdir: "/Applications" }
 cask "cursor"
 cask "dash", args: { appdir: "/Applications" }
 cask "evernote", args: { appdir: "/Applications" }
-cask "fig", args: { appdir: "/Applications" }
 cask "firefox", args: { appdir: "/Applications" }
 cask "font-hack-nerd-font", args: { appdir: "/Applications" }
 cask "google-chrome", args: { appdir: "/Applications" }

@@ -2,8 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AIFeatureFunctionCalling</key>
+	<true/>
+	<key>AIFeatureHostedCodeInterpeter</key>
+	<false/>
+	<key>AIFeatureHostedFileSearch</key>
+	<false/>
+	<key>AIFeatureHostedWebSearch</key>
+	<false/>
+	<key>AIFeatureStreamingResponses</key>
+	<true/>
+	<key>AITermAPI</key>
+	<integer>3</integer>
+	<key>AIVectorStore</key>
+	<integer>0</integer>
+	<key>AIVendor</key>
+	<integer>1</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AiMaxTokens</key>
+	<integer>1048576</integer>
+	<key>AiModel</key>
+	<string>gemini-2.0-flash</string>
+	<key>AiResponseMaxTokens</key>
+	<integer>8192</integer>
+	<key>AitermURL</key>
+	<string>https://generativelanguage.googleapis.com/v1beta/models/{{MODEL}}</string>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AnimateDimming</key>
@@ -659,6 +683,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>CE37E3D0-6341-4F08-A061-28FAED344723</string>
+	<key>Default Browser Profile Guid</key>
+	<string>BFB37021-E28D-4688-A78D-832C5CBD1EA1</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -1095,7 +1121,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string></string>
+			<string>tmux</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1392,6 +1418,8 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
+			<key>Load Shell Integration Automatically</key>
+			<true/>
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
@@ -1703,6 +1731,8 @@
 					<string>(?i)exception</string>
 				</dict>
 			</array>
+			<key>Unicode Normalization</key>
+			<integer>1</integer>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1723,6 +1753,31 @@
 			<integer>0</integer>
 			<key>Working Directory</key>
 			<string></string>
+		</dict>
+		<dict>
+			<key>Command</key>
+			<string>/bin/bash --login</string>
+			<key>Custom Command</key>
+			<string>Browser</string>
+			<key>Default Bookmark</key>
+			<string>No</string>
+			<key>Guid</key>
+			<string>BFB37021-E28D-4688-A78D-832C5CBD1EA1</string>
+			<key>Jobs to Ignore</key>
+			<array>
+				<string>rlogin</string>
+				<string>ssh</string>
+				<string>slogin</string>
+				<string>telnet</string>
+			</array>
+			<key>Name</key>
+			<string>Web Browser</string>
+			<key>Prompt Before Closing 2</key>
+			<false/>
+			<key>Scrollback Lines</key>
+			<integer>0</integer>
+			<key>Tags</key>
+			<array/>
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
