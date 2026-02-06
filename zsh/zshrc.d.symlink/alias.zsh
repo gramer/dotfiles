@@ -11,7 +11,7 @@ alias ad='ansible-doc'
 alias bat='bat -p'
 alias bb='brew bundle'
 alias bi='brew info `brew list -1 | fzf`'
-alias bu='brew upgrade `brew list -1 | fzf`'
+alias bu='brew update > /dev/null 2>&1 && brew upgrade $(brew outdated | fzf -m)'
 alias bl='brew list'
 alias blf='brew list | fzf'
 alias bs='brew search'
@@ -39,12 +39,14 @@ alias na="navi"
 alias nt='navi --tldr $(tldr --list |  tr  "," "\n" | tr -d " " | fzf)'
 alias p='pwd'
 alias pc='pwd | clipcopy'
+alias rml='rm --list-trash'
+alias rme='rm --empty-trash'
 alias s='storm'
 alias sz="source ~/.zshrc"
-alias t='tree'
-alias t1='tree -L 1'
-alias t2='tree -L 2'
-alias tt='tree -L 2'
+alias t='tree -C'
+alias t1='tree -L 1 -C'
+alias t2='tree -L 2 -C'
+alias tt='tree -L 2 -C'
 alias t3='tree -L 3'
 alias vi2='vi -O2 '
 
@@ -60,4 +62,3 @@ alias load-pipenv='eval "$(pipenv --completion)"'
 # }}}
 
 alias vimupdate='vim +PluUpdate +qall'
-

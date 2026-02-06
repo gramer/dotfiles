@@ -1,1 +1,2 @@
-bindkey -s '^\' 'gemini --show-memory-usage^M'
+bindkey -s '^\' 'gemini ^M'
+bindkey -s '^o' 'opencode ^M'

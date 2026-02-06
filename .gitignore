@@ -14,3 +14,4 @@ git/gitconfig.local.symlink
 /Brewfile.lock.json
 /git/package.json
 /package-lock.json
+/zsh/zshrc.d.symlink/secrets.zsh

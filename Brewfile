@@ -259,7 +259,6 @@ mas "GIPHY CAPTURE", id: 668208984
 mas "GarageBand", id: 682658836
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
-mas "OTP Manager", id: 928941247
 mas "Pages", id: 409201541
 mas "RocketFuel", id: 1114196460
 mas "SimpleMind", id: 439654198
