@@ -1,6 +1,6 @@
-# Too slow command
-# GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6) 2>/dev/null 
-export GOROOT=$(brew --prefix)/Cellar/go/1.14.6/libexec 
+# GOROOT: brew --prefix 대신 고정 경로 사용 (subshell 실행 비용 절감)
+# brew --prefix go 결과를 직접 설정 (변경 시 수동 업데이트)
+export GOROOT="$(brew --prefix go)/libexec"
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 #export GO15VENDOREXPERIMENT=1

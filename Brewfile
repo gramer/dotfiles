@@ -6,6 +6,8 @@ tap "cantino/mcfly"
 tap "derailed/k9s"
 tap "elastic/tap"
 tap "goodwithtech/r"
+tap "homebrew/bundle"
+tap "homebrew/services"
 tap "jetbrains/utils"
 tap "johanhaleby/kubetail"
 tap "mongodb/brew"
@@ -126,7 +128,7 @@ brew "jsonschema"
 brew "k6"
 brew "k8sgpt"
 brew "kafka"
-brew "kops", args: ["HEAD"]
+brew "kops"
 brew "krew"
 brew "kube-ps1"
 brew "kubectx"
@@ -158,7 +160,7 @@ brew "mongocli"
 brew "mongodb/brew/mongodb-community"
 brew "mveritym/mel/kubedecode"
 brew "mycli"
-brew "mysql", restart_service: :changed
+brew "mysql"
 brew "navi"
 brew "netcat"
 brew "netpbm"
@@ -246,69 +248,68 @@ brew "zplug"
 brew "zsh"
 
 # brew casks (brew install --cask)
-cask "1password", args: { appdir: "/Applications" }
+cask_args appdir: "/Applications"
+
+cask "1password"
 cask "1password-cli"
-cask "alfred", args: { appdir: "/Applications" }
+cask "alfred"
 cask "alfred@4"
 cask "antigravity"
 cask "appcleaner"
 cask "arc"
-cask "atom", args: { appdir: "/Applications" }
-cask "charles", args: { appdir: "/Applications" }
+cask "atom"
+cask "charles"
 cask "chatgpt-atlas"
 cask "claude"
 cask "cmux"
 cask "copilot-cli"
 cask "cursor"
-cask "dash", args: { appdir: "/Applications" }
-cask "docker-desktop", args: { appdir: "/Applications" }
-cask "evernote", args: { appdir: "/Applications" }
-cask "firefox", args: { appdir: "/Applications" }
-cask "font-hack-nerd-font", args: { appdir: "/Applications" }
-cask "google-chrome", args: { appdir: "/Applications" }
-cask "google-drive", args: { appdir: "/Applications" }
-cask "gpg-suite", args: { appdir: "/Applications" }
-cask "hiddenbar"
+cask "dash"
+cask "docker-desktop"
+cask "evernote"
+cask "firefox"
+cask "font-hack-nerd-font"
+cask "google-chrome"
+cask "google-drive"
+cask "gpg-suite"
 cask "homerow"
-cask "iterm2", args: { appdir: "/Applications" }
-cask "jetbrains-toolbox", args: { appdir: "/Applications" }
-cask "jiggler"
+cask "iterm2"
+cask "jetbrains-toolbox"
 cask "jordanbaird-ice"
 cask "keyclu"
 cask "kiro-cli"
-cask "lens", args: { appdir: "/Applications" }
-cask "liteide", args: { appdir: "/Applications" }
+cask "lens"
+cask "liteide"
 cask "lm-studio"
 cask "meetingbar"
-cask "memoryanalyzer", args: { appdir: "/Applications" }
-cask "mysqlworkbench", args: { appdir: "/Applications" }
-cask "nosqlbooster-for-mongodb", args: { appdir: "/Applications" }
-cask "notion", args: { appdir: "/Applications" }
-cask "numi", args: { appdir: "/Applications" }
-cask "obsidian", args: { appdir: "/Applications" }
-cask "omnissa-horizon-client", args: { appdir: "/Applications" }
-cask "onedrive", args: { appdir: "/Applications" }
+cask "memoryanalyzer"
+cask "mysqlworkbench"
+cask "nosqlbooster-for-mongodb"
+cask "notion"
+cask "numi"
+cask "obsidian"
+cask "omnissa-horizon-client"
+cask "onedrive"
 cask "openlens"
-cask "postman", args: { appdir: "/Applications" }
+cask "postman"
 cask "raycast"
-cask "razorsql", args: { appdir: "/Applications" }
-cask "rectangle", args: { appdir: "/Applications" }
-cask "scapple", args: { appdir: "/Applications" }
-cask "slack", args: { appdir: "/Applications" }
+cask "razorsql"
+cask "rectangle"
+cask "scapple"
+cask "slack"
 cask "sublime-text"
-cask "the-unarchiver", args: { appdir: "/Applications" }
+cask "the-unarchiver"
 cask "tradingview"
-cask "vanilla", args: { appdir: "/Applications" }
-cask "visual-studio-code", args: { appdir: "/Applications" }
+cask "vanilla"
+cask "visual-studio-code"
 cask "vrew"
-cask "wallpaper-wizard", args: { appdir: "/Applications" }
-cask "wireshark-app", args: { appdir: "/Applications" }
+cask "wallpaper-wizard"
+cask "wireshark-app"
 
 # mas apps (mas install)
 mas "Clocker", id: 1056643111
-mas "GarageBand", id: 682658836
 mas "GIPHY CAPTURE", id: 668208984
-mas "iMovie", id: 408981434
+mas "GarageBand", id: 682658836
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -322,6 +323,7 @@ mas "Unsplash Wallpapers", id: 1284863847
 mas "Usage for Claude", id: 6755173244
 mas "Wallpapers HD Lite", id: 441812880
 mas "Windows App", id: 1295203466
+mas "iMovie", id: 408981434
 mas "채팅+", id: 6470968928
 mas "카카오톡", id: 869223134
 

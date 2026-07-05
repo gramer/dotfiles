@@ -62,3 +62,8 @@ alias load-pipenv='eval "$(pipenv --completion)"'
 # }}}
 
 alias vimupdate='vim +PluUpdate +qall'
+
+# zsh 시작 시간 벤치마크 (5회 평균)
+alias zsh-bench='for i in $(seq 1 5); do /usr/bin/time zsh -i -c exit 2>&1 | grep real; done'
+# zplug 플러그인 수동 설치 (필요 시 직접 실행)
+alias zplug-update='zplug check || zplug install && zplug update'

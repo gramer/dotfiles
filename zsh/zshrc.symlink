@@ -72,8 +72,8 @@ zplug "plugins/zsh-autosuggestions", from:oh-my-zsh
 zplug "MichaelAquilina/zsh-you-should-use"
 zplug "plugins/zsh_reload", from:oh-my-zsh
 
-# Install plugins if there are plugins that have not been installed
-zplug check || zplug install
+# 성능 최적화: check/install은 수동으로만 (`zplug install` 실행)
+# zplug check || zplug install
 # Then, source plugins and add commands to $PATH
 zplug load
 # }}}
@@ -104,21 +104,38 @@ export TMUX_TMPDIR=~/.tmux/tmp
 # initialize tools {{{
 # [ -f /usr/local/opt/autoenv/activate.sh ] && source /usr/local/opt/autoenv/activate.sh
 
-# direnv
-eval "$(direnv hook zsh)"
+# direnv - eval 결과를 캐싱하여 서브쉘 실행 비용 절감
+_DIRENV_CACHE="$HOME/.cache/zsh/direnv_hook.zsh"
+if [[ ! -f "$_DIRENV_CACHE" ]] || [[ "$(command -v direnv)" -nt "$_DIRENV_CACHE" ]]; then
+  mkdir -p "$(dirname "$_DIRENV_CACHE")"
+  direnv hook zsh >| "$_DIRENV_CACHE"
+fi
+source "$_DIRENV_CACHE"
 
 # broot
 [ -f "$HOME"/.config/broot/launcher/bash/br ] && source "$HOME"/.config/broot/launcher/bash/br
 
-# navi
-eval "$(navi widget zsh)"
+# navi - eval 결과를 캐싱하여 서브쉘 실행 비용 절감
+_NAVI_CACHE="$HOME/.cache/zsh/navi_widget.zsh"
+if [[ ! -f "$_NAVI_CACHE" ]] || [[ "$(command -v navi)" -nt "$_NAVI_CACHE" ]]; then
+  mkdir -p "$(dirname "$_NAVI_CACHE")"
+  navi widget zsh >| "$_NAVI_CACHE"
+fi
+source "$_NAVI_CACHE"
 # }}}
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf (중복 source 제거 - 위 line 90에서 이미 로드됨)
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# SDKMAN - lazy-load (무거운 초기화를 첫 sdk 명령 사용 시까지 지연)
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+  sdk() {
+    unfunction sdk
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    sdk "$@"
+  }
+fi
 export PATH="/opt/homebrew/bin:$PATH"
 source "/Users/gramer/.rm-safely" >/dev/null 2>&1
 
@@ -134,3 +151,9 @@ export PATH="/Users/gramer/.antigravity/antigravity/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Entire CLI shell completion
+autoload -Uz compinit && compinit && source <(entire completion zsh)
+
+# qmd - Korean/CJK embedding model
+export QMD_EMBED_MODEL="hf:Qwen/Qwen3-Embedding-0.6B-GGUF/Qwen3-Embedding-0.6B-Q8_0.gguf"

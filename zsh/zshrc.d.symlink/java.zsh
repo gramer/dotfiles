@@ -1,7 +1,7 @@
 #!/bin/zsh
 # maven and gradle {{{
-export MAVEN_OPTS='-Xmx512m -XX:MaxPermSize=128m'
-export GRADLE_OPTS='-Xmx1024m -XX:MaxPermSize=256m'
+export MAVEN_OPTS='-Xmx512m'
+export GRADLE_OPTS='-Xmx1024m'
 # }}}
 
 # jenv {{{
