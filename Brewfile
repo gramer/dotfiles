@@ -1,18 +1,22 @@
+tap "anomalyco/tap"
 tap "blacknon/hwatch"
+tap "broadcom/tap", "https://github.com/Broadcom/homebrew-tap.git"
 tap "buo/cask-upgrade"
 tap "cantino/mcfly"
 tap "derailed/k9s"
 tap "elastic/tap"
 tap "goodwithtech/r"
 tap "jetbrains/utils"
+tap "johanhaleby/kubetail"
 tap "mongodb/brew"
 tap "mveritym/mel"
-tap "pivotal/tap"
 tap "restcli/restcli"
 tap "romkatv/powerlevel10k"
 tap "schappim/ocr"
 tap "spring-io/tap"
+tap "sst/tap", "https://github.com/anomalyco/homebrew-tap.git"
 tap "wagoodman/dive"
+tap "zdk/tools"
 
 # brew installs (brew install)
 brew "adr-tools"
@@ -21,6 +25,7 @@ brew "ansible-lint"
 brew "ant"
 brew "aom"
 brew "asciinema"
+brew "asdf"
 brew "at-spi2-core"
 brew "autoconf"
 brew "autojump"
@@ -28,19 +33,23 @@ brew "automake"
 brew "awscli"
 brew "bash"
 brew "bat"
+brew "berkeley-db", link: true
+brew "bfg"
 brew "black"
 brew "broot"
+brew "c-ares"
 brew "cairo"
-brew "cffi"
 brew "cidr"
 brew "cmake"
+brew "consul"
 brew "coreutils"
 brew "cowsay"
-brew "cryptography"
 brew "cscope"
 brew "ctags"
+brew "curlie"
 brew "dasel"
 brew "dbus"
+brew "dep"
 brew "derailed/k9s/k9s"
 brew "detekt"
 brew "direnv"
@@ -48,11 +57,15 @@ brew "dive"
 brew "docutils"
 brew "dos2unix"
 brew "duckdb"
+brew "exa"
+brew "expat"
 brew "extract_url"
 brew "eza"
 brew "faas-cli"
 brew "figlet"
+brew "fleetctl"
 brew "fontconfig"
+brew "fontforge"
 brew "fortune"
 brew "freetype"
 brew "fzf"
@@ -63,6 +76,7 @@ brew "gd"
 brew "gdbm"
 brew "gdk-pixbuf"
 brew "gemini-cli"
+brew "geoip"
 brew "gettext"
 brew "gh"
 brew "ghostscript"
@@ -70,17 +84,19 @@ brew "gifsicle"
 brew "git"
 brew "git-crypt"
 brew "git-flow"
+brew "git-open"
 brew "git-quick-stats"
 brew "git-secret"
+brew "glib"
+brew "glow"
 brew "gmp"
 brew "gnu-tar"
 brew "gnupg"
 brew "gnutls"
-brew "go"
 brew "goaccess"
 brew "gobject-introspection"
-brew "gonzo"
 brew "gomplate"
+brew "gonzo"
 brew "goodwithtech/r/dockle"
 brew "gradle"
 brew "grafana"
@@ -88,14 +104,17 @@ brew "graphviz"
 brew "groovy"
 brew "gtk+"
 brew "gts"
+brew "guile"
 brew "harfbuzz"
 brew "helm"
 brew "hostess"
 brew "htop"
 brew "httpie"
-brew "hwatch"
+brew "hunspell"
 brew "imagemagick"
+brew "jasper"
 brew "jbig2dec"
+brew "jenkins"
 brew "jenv"
 brew "jetbrains/utils/qodana"
 brew "jmeter"
@@ -103,6 +122,7 @@ brew "jpeg"
 brew "jpeg-xl"
 brew "jq"
 brew "jsonpp"
+brew "jsonschema"
 brew "k6"
 brew "k8sgpt"
 brew "kafka"
@@ -110,14 +130,13 @@ brew "kops", args: ["HEAD"]
 brew "krew"
 brew "kube-ps1"
 brew "kubectx"
-brew "libavif"
+brew "libarchive"
 brew "libevent"
 brew "libffi"
 brew "libfido2"
 brew "libgcrypt"
 brew "libgpg-error"
 brew "libheif"
-brew "libidn2"
 brew "libksba"
 brew "libpng"
 brew "libraw"
@@ -125,9 +144,9 @@ brew "librsvg"
 brew "libtasn1"
 brew "libtiff"
 brew "libtool"
-brew "libx11"
 brew "libyaml"
 brew "little-cms2"
+brew "llama.cpp"
 brew "logstash"
 brew "luajit"
 brew "makedepend"
@@ -141,35 +160,38 @@ brew "mveritym/mel/kubedecode"
 brew "mycli"
 brew "mysql", restart_service: :changed
 brew "navi"
+brew "netcat"
 brew "netpbm"
 brew "nettle"
 brew "nginx"
 brew "nmap"
+brew "node"
 brew "node_exporter"
 brew "nvm"
 brew "ollama"
 brew "oniguruma"
 brew "openapi-generator"
-brew "openjdk"
 brew "openjdk@11"
-brew "openjdk@17"
-brew "openjdk@21"
+brew "p11-kit"
+brew "packer"
 brew "pandoc"
 brew "pango"
 brew "pcre"
 brew "peco"
 brew "perl"
 brew "pipenv"
+brew "pipx"
 brew "pixman"
 brew "pkgconf"
 brew "pnpm"
 brew "portmidi"
 brew "powerlevel10k"
-brew "pycparser"
 brew "pyenv"
 brew "pyenv-virtualenv"
+brew "python-tabulate"
 brew "python@3.10"
 brew "python@3.11"
+brew "python@3.9"
 brew "qt"
 brew "rbenv"
 brew "reattach-to-user-namespace"
@@ -182,15 +204,23 @@ brew "sbt"
 brew "scala"
 brew "schappim/ocr/ocr"
 brew "sdl12-compat"
+brew "sdl_image", link: false
+brew "sdl_mixer"
+brew "sdl_ttf"
+brew "shared-mime-info"
 brew "siege"
 brew "skaffold"
 brew "socat"
 brew "sonar-scanner"
+brew "sonarqube"
 brew "sonobuoy"
 brew "spring-io/tap/spring-boot"
 brew "sysdig"
+brew "tbb"
 brew "telnet"
 brew "terraform"
+brew "tesseract"
+brew "tesseract-lang"
 brew "the_silver_searcher"
 brew "tig"
 brew "tmux"
@@ -207,6 +237,7 @@ brew "wget"
 brew "whatmask"
 brew "wrk"
 brew "wtf"
+brew "xz", link: false
 brew "yamllint"
 brew "yarn"
 brew "yq"
@@ -216,21 +247,35 @@ brew "zsh"
 
 # brew casks (brew install --cask)
 cask "1password", args: { appdir: "/Applications" }
+cask "1password-cli"
+cask "alfred", args: { appdir: "/Applications" }
 cask "alfred@4"
+cask "antigravity"
+cask "appcleaner"
 cask "arc"
 cask "atom", args: { appdir: "/Applications" }
 cask "charles", args: { appdir: "/Applications" }
+cask "chatgpt-atlas"
+cask "claude"
+cask "cmux"
+cask "copilot-cli"
 cask "cursor"
 cask "dash", args: { appdir: "/Applications" }
+cask "docker-desktop", args: { appdir: "/Applications" }
 cask "evernote", args: { appdir: "/Applications" }
 cask "firefox", args: { appdir: "/Applications" }
 cask "font-hack-nerd-font", args: { appdir: "/Applications" }
 cask "google-chrome", args: { appdir: "/Applications" }
+cask "google-drive", args: { appdir: "/Applications" }
+cask "gpg-suite", args: { appdir: "/Applications" }
 cask "hiddenbar"
 cask "homerow"
-cask "iterm2"
+cask "iterm2", args: { appdir: "/Applications" }
 cask "jetbrains-toolbox", args: { appdir: "/Applications" }
 cask "jiggler"
+cask "jordanbaird-ice"
+cask "keyclu"
+cask "kiro-cli"
 cask "lens", args: { appdir: "/Applications" }
 cask "liteide", args: { appdir: "/Applications" }
 cask "lm-studio"
@@ -241,6 +286,8 @@ cask "nosqlbooster-for-mongodb", args: { appdir: "/Applications" }
 cask "notion", args: { appdir: "/Applications" }
 cask "numi", args: { appdir: "/Applications" }
 cask "obsidian", args: { appdir: "/Applications" }
+cask "omnissa-horizon-client", args: { appdir: "/Applications" }
+cask "onedrive", args: { appdir: "/Applications" }
 cask "openlens"
 cask "postman", args: { appdir: "/Applications" }
 cask "raycast"
@@ -250,29 +297,40 @@ cask "scapple", args: { appdir: "/Applications" }
 cask "slack", args: { appdir: "/Applications" }
 cask "sublime-text"
 cask "the-unarchiver", args: { appdir: "/Applications" }
+cask "tradingview"
+cask "vanilla", args: { appdir: "/Applications" }
 cask "visual-studio-code", args: { appdir: "/Applications" }
+cask "vrew"
 cask "wallpaper-wizard", args: { appdir: "/Applications" }
+cask "wireshark-app", args: { appdir: "/Applications" }
 
 # mas apps (mas install)
 mas "Clocker", id: 1056643111
-mas "GIPHY CAPTURE", id: 668208984
 mas "GarageBand", id: 682658836
+mas "GIPHY CAPTURE", id: 668208984
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "RocketFuel", id: 1114196460
 mas "SimpleMind", id: 439654198
 mas "Skitch", id: 425955336
+mas "Snappy", id: 512617038
+mas "Snappy", id: 6502442568
 mas "Teampaper", id: 1199502670
-mas "Windows App", id: 1295203466
-mas "iMovie", id: 408981434
-mas "Snappy by Povio", id: 6502442568
 mas "Unsplash Wallpapers", id: 1284863847
+mas "Usage for Claude", id: 6755173244
+mas "Wallpapers HD Lite", id: 441812880
+mas "Windows App", id: 1295203466
+mas "채팅+", id: 6470968928
+mas "카카오톡", id: 869223134
 
 # vs code extensions
 vscode "alphabotsec.vscode-eclipse-keybindings"
+vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "docker.docker"
 vscode "donebd.vscode-keypromoter"
+vscode "fwcd.kotlin"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "mathiasfrohlich.kotlin"
@@ -289,4 +347,15 @@ vscode "vscjava.vscode-java-dependency"
 vscode "vscjava.vscode-java-pack"
 vscode "vscjava.vscode-java-test"
 vscode "vscjava.vscode-maven"
-vscode "withfig.fig"
+
+# uv tool installs
+uv "claude-knowledge-graph"
+uv "graphifyy"
+uv "headroom-ai[proxy]"
+uv "notebooklm-cli"
+
+# npm global installs
+npm "@bchatard/alfred-jetbrains"
+npm "firecrawl-cli"
+npm "oh-my-claude-sisyphus"
+npm "spoof"
